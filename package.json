@@ -1,0 +1,26 @@
+{
+  "name": "nativescript-updater",
+  "version": "0.0.1",
+  "description": "A sqlite NativeScript module for Android and (soon) iOS",
+  "main": "updater.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nathanaela/nativescript-updater.git"
+  },
+  "keywords": [
+    "NativeScript", "Updater"
+  ],
+  "author": {
+    "name": "Nathanael Anderson",
+    "email": "nathan@master-technology.com"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/nathanaela/nativescript-updater/blob/master/LICENSE"
+  },
+  "bugs": {
+    "url": "https://github.com/nathanaela/nativescript-updater/issues"
+  },
+  "homepage": "https://github.com/nathanaela/nativescript-updater",
+  "readmeFilename": "README.md"
+}
