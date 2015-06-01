@@ -1,10 +1,10 @@
-# NativeScript sqlite
+# NativeScript Realtime Updater
 
 A NativeScript module providing real time development for Android and (hopefully soon) iOS applications.
 
 
 ## Realtime Editing Demo
-[![Video Showing off Realtime Development Ability](http://img.youtube.com/vi/cCiyJZexSOQ﻿/0.jpg)](http://www.youtube.com/watch?v=cCiyJZexSOQ﻿)
+[![Video Showing off Realtime Development Ability](http://img.youtube.com/vi/cCiyJZexSOQ/0.jpg)](http://www.youtube.com/watch?v=cCiyJZexSOQ)
 
 
 ## Installation
