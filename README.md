@@ -3,14 +3,25 @@
 A NativeScript module providing real time development for Android and (hopefully soon) iOS applications.
 
 
+## License
+
+This is released under the MIT License, meaning you are free to include this in any type of program -- However for entities that need a support and/or a commercial license please contact me (nathan@master-technology.com).
+
+
 ## Realtime Editing Demo
-[![Video Showing off Realtime Development Ability](http://img.youtube.com/vi/cCiyJZexSOQ/0.jpg)](http://www.youtube.com/watch?v=cCiyJZexSOQ)
+
+[![Video Showing off Real Time Development Ability](http://img.youtube.com/vi/cCiyJZexSOQ/0.jpg)](http://www.youtube.com/watch?v=cCiyJZexSOQ)
 
 
 ## Installation
 
 Run `npm install jshint -g`
+
+If you don't have xmllint already on your machine; you will need to install it.    
+
 Run `npm install nativescript-updater --save` from inside your project's `app` directory:
+
+
 
 ```
 .
@@ -62,4 +73,4 @@ application.start();
 
 Then this will activate at the start of the application and work for the entire time, also notice the removal of the "./" in the cssFile.  
 
-You will also want to copy the "support" folder files to your main folder as it will contain a jslintrc file, and the nifty watcher.js file that you run at the start of your development.
+You will also want to copy the "support" folder files to your main folder as it will contain a .jslintrc file, and the nifty watcher.js file that you run at the start of your development that monitors your local files for any changes.
