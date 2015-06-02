@@ -1,34 +1,27 @@
-# NativeScript Real time Updater
+# NativeScript Updater
 
-A NativeScript module providing real time development for Android and (hopefully soon) iOS applications.
+**PLEASE NOTE** if you are looking for the Real Time Live Syncing for Development, I have changed that project name to LiveSync, and this project will become my original idea for a simple downloadable update system.
+The LiveSync repo is at [http://www.github.com/NathanaelA/NativeScript-LiveSync](http://www.github.com/NathanaelA/NativeScript-LiveSync)
 
-This currently requires the Android Runtime to be patched with an addition call so please up-vote the pull request:
-[https://github.com/NativeScript/android-runtime/pull/92](https://github.com/NativeScript/android-runtime/pull/92)
+ A NativeScript module providing easy to deploy updates from your own web server(s).    
 
 
 ## License
 
-This is released under the MIT License, meaning you are free to include this in any type of program -- However for entities that need a support and/or a commercial license please contact me (nathan@master-technology.com).
+All this code is (c)2015, Master Technology.   This is released under the MIT License, meaning you are free to include this in any type of program -- However for entities that need a support and/or a commercial license please contact me (nathan@master-technology.com).
+
+I do contract work; so if you have a module you want built for NativeScript (or pretty much any other language) feel free to contact me.
 
 
-## Real Time Editing Demo
-
-[![Video Showing off Real Time Development Ability](http://img.youtube.com/vi/cCiyJZexSOQ/0.jpg)](http://www.youtube.com/watch?v=cCiyJZexSOQ)
 
 
 ## Installation
 
-Run `npm install jshint -g`
-
-If you don't have xmllint already on your machine; you will need to install it. (Windows users: http://xmlsoft.org/sources/win32/)
-
 Run `npm install nativescript-updater --save` from inside your project's `app` directory:
 
 
-
 ```
-.
-├── app <------------------------------ run npm install from inside here
+├── app <------------------------------ run npm install from inside the app folder, here
 │   ├── app.css
 │   ├── app.js
 │   ├── main-page.js
@@ -51,7 +44,7 @@ As is, using npm within NativeScript is still experimental, so it's possible tha
 If npm doesn't end up working for you, you can just copy and paste this repo's updater.android.js, and updater.ios.js files into your app and reference them directly.
 
 
-## Usage
+## Usage & Running
 
 To use the updater module you must first `require()` it from your project's `node_modules` directory:
 
@@ -59,13 +52,11 @@ To use the updater module you must first `require()` it from your project's `nod
 var updater = require( "./node_modules/nativescript-updater/updater" );
 ```
 
-If you put this in your **app.js** like so:
+You should as a minimum put this in your **app.js** like so:
 ```js
 var application = require("application");
 application.mainModule = "main-page";
-// ----- MODIFY THIS LINE -----
-application.cssFile = "app.css"; // this was "./app.css"
-// ----------------------------
+application.cssFile = "./app.css"; 
 
 // ---- ADD THIS LINE ----
 require('./node_modules/nativescript-updater/updater');
@@ -74,19 +65,22 @@ require('./node_modules/nativescript-updater/updater');
 application.start();
 ```
 
-Then this will activate at the start of the application and work for the entire time, also notice the removal of the "./" in the cssFile.  
+Then this will activate at the start of the application and process any updates that it has already downloaded.  
 
-You will also want to copy the "support" folder files to your main folder as it will contain a .jslintrc file, and the nifty watcher.js file that you run at the start of your development that monitors your local files for any changes.
 
-## Get the updater object
+## Get the LiveSync object
 ```var updater = require('./node_modules/nativescript-updater/updater');```
 
 ### Methods
 
-#### addModelPageLink(Page, Model)
+#### checkForUpdate(webPage)
 ##### Parameters
-* Page - this is the page that the model is related too.
-* Model - this is the model that relates to the page
+* webPage - web site to download changed from
+
+#### enabled(value) 
+##### Parameters
+* (no parameter) will return if it is enabled
+* (value) - set it to be enabled (true) or disabled (false)
 
 #### debugMode(value)
 ##### Parameters 
@@ -100,7 +94,7 @@ This will return the package name in the from the AndroidManifest
 This will return the VersionName from inside the AndroidManifest
 
 #### restart()
-This will fully restart the application
+This will fully restart the application 
 
 #### checkForEmulator()
 This will check to see if the app is running on a emulator
@@ -108,13 +102,8 @@ This will check to see if the app is running on a emulator
 #### checkForDebugMode()
 This will check to see if the app was signed with a debug key (i.e. debug mode)
 
-#### reloadPage()
-This will reload the current page
-
 #### isSuspended()
 This will tell you if the application is suspended.  (i.e. some other app has focus)
 
 #### currentAppPath()
 This will return the current application path.
-
-

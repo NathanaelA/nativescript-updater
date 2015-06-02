@@ -1,7 +1,7 @@
 {
   "name": "nativescript-updater",
   "version": "0.0.1",
-  "description": "A sqlite NativeScript module for Android and (soon) iOS",
+  "description": "A Updater NativeScript module for Android and (soon) iOS",
   "main": "updater.js",
   "repository": {
     "type": "git",
